@@ -1,6 +1,6 @@
 # Beauty Growth Lab
 
-AI Search Optimization(SEO·AEO·GEO) 회사 Beauty Growth Lab의 홈페이지. Next.js 16(App Router) + TypeScript + Tailwind CSS v4.
+뷰티샵 원장님들을 위한 AI 마케팅 회사 — AI Search Optimization(SEO·AEO·GEO) 홈페이지. Next.js 16(App Router) + TypeScript + Tailwind CSS v4.
 
 ## 시작하기
 
