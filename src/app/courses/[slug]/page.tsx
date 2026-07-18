@@ -11,6 +11,15 @@ export function generateStaticParams() {
   return getAllCourseRoutes().map((routeSlug) => ({ slug: routeSlug }));
 }
 
+const seoDescriptions: Record<string, string> = {
+  capcut:
+    "뷰티샵 캡컷 교육 · 뷰티 원장 캡컷 강의. 40대·50대 원장님도 스마트폰으로 릴스를 완성하는 캡컷 실전 교육입니다.",
+  "canva-miricanvas":
+    "뷰티샵 캔바 교육 · 뷰티 원장 미리캔버스 교육. 이벤트 포스터, 카드뉴스, 가격표까지 직접 만드는 실전 교육입니다.",
+  "ai-sns":
+    "뷰티 원장 AI 교육 · 뷰티샵 SNS 교육. ChatGPT와 편집툴을 연결해 한 달 콘텐츠를 완성하는 실전 교육입니다.",
+};
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const items = getCoursesByRoute(slug);
@@ -19,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const title = `${items.map((c) => c.toolName).join(" · ")} 실전 교육`;
   return constructMetadata({
     title,
-    description: items[0].description,
+    description: seoDescriptions[slug] ?? items[0].description,
     path: `/courses/${slug}`,
   });
 }

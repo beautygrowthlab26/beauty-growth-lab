@@ -8,7 +8,8 @@ import { constructMetadata, breadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata = constructMetadata({
   title: "교육 프로그램",
-  description: "캡컷, 캔바, 미리캔버스, AI SNS 연계 교육 — 원장님이 직접 매장 콘텐츠를 만드는 툴별 실전 교육입니다.",
+  description:
+    "뷰티샵 캡컷 교육, 뷰티샵 캔바 교육, 뷰티 원장 미리캔버스 교육, 뷰티 원장 AI 교육 — 원장님이 직접 매장 콘텐츠를 만드는 툴별 실전 교육입니다.",
   path: "/courses",
 });
 

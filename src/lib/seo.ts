@@ -10,7 +10,7 @@ export const siteConfig = {
   email: "hello@beautygrowthlab.co.kr",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://beautygrowthlab.co.kr",
   description:
-    "Beauty Growth Lab은 SEO를 넘어 AEO·GEO까지 설계하는 AI Search Optimization 전문 회사입니다. AI가 먼저 추천하는 브랜드를 만듭니다.",
+    "40·50대 뷰티 원장님을 위한 캡컷·미리캔버스·캔바·AI 실전 교육 브랜드. 어려운 디지털 마케팅을 원장님 눈높이에서 하나씩 알려드립니다.",
   ogImage: "/og-default.png",
   sameAs: [] as string[],
 } as const;

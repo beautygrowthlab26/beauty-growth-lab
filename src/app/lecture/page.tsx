@@ -7,7 +7,8 @@ import { constructMetadata, breadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata = constructMetadata({
   title: "강의·출강 문의",
-  description: "1:1 원장님 교육부터 협회 및 아카데미 특강, 출장·온라인 교육까지 다양한 방식으로 진행합니다.",
+  description:
+    "뷰티업 강사 출강, 뷰티샵 마케팅 강의 — 1:1 원장님 교육부터 협회 및 아카데미 특강, 출장·온라인 교육까지 다양한 방식으로 진행합니다.",
   path: "/lecture",
 });
 

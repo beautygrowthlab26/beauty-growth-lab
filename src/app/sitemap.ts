@@ -2,21 +2,37 @@ import type { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/seo";
 import { services } from "@/data/services";
 import { educationCases } from "@/data/cases";
+import { getAllCourseRoutes } from "@/data/courses";
+import { programs } from "@/data/programs";
 import { getAllBlogPosts } from "@/lib/blog";
 import { getAllFaqEntries } from "@/lib/faq";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes = [
     "",
+    "/courses",
+    "/programs",
+    "/consult",
+    "/lecture",
+    "/about",
     "/services",
     "/cases",
     "/blog",
     "/faq",
-    "/bgi",
     "/contact",
     "/privacy",
   ].map((path) => ({
     url: new URL(path || "/", siteConfig.url).toString(),
+    lastModified: new Date(),
+  }));
+
+  const courseRoutes = getAllCourseRoutes().map((routeSlug) => ({
+    url: new URL(`/courses/${routeSlug}`, siteConfig.url).toString(),
+    lastModified: new Date(),
+  }));
+
+  const programRoutes = programs.map((program) => ({
+    url: new URL(`/programs/${program.slug}`, siteConfig.url).toString(),
     lastModified: new Date(),
   }));
 
@@ -40,5 +56,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified: new Date(),
   }));
 
-  return [...staticRoutes, ...serviceRoutes, ...caseRoutes, ...blogRoutes, ...faqRoutes];
+  return [
+    ...staticRoutes,
+    ...courseRoutes,
+    ...programRoutes,
+    ...serviceRoutes,
+    ...caseRoutes,
+    ...blogRoutes,
+    ...faqRoutes,
+  ];
 }

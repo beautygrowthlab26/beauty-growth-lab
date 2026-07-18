@@ -9,7 +9,8 @@ import { constructMetadata, breadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata = constructMetadata({
   title: "교육 프로그램 및 패키지",
-  description: "원장님 디지털 기초 클래스, AI SNS 콘텐츠 실전 클래스, 매장 맞춤 1:1 디지털 코칭 — 목적에 맞는 교육 패키지를 선택하세요.",
+  description:
+    "뷰티샵 콘텐츠 제작 교육, 뷰티샵 SNS 교육 패키지 — 원장님 디지털 기초 클래스, AI SNS 콘텐츠 실전 클래스, 매장 맞춤 1:1 디지털 코칭 중 목적에 맞는 과정을 선택하세요.",
   path: "/programs",
 });
 
