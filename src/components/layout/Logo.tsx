@@ -1,12 +1,17 @@
 import Link from "next/link";
-import { Sparkle } from "lucide-react";
+import Image from "next/image";
 
 export function Logo({ className }: { className?: string }) {
   return (
     <Link href="/" className={`group flex items-center gap-2.5 ${className ?? ""}`}>
-      <span className="relative flex size-8 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-gold text-white shadow-sm transition-transform duration-300 group-hover:scale-105">
-        <Sparkle className="size-4" strokeWidth={2.5} fill="currentColor" />
-      </span>
+      <Image
+        src="/logo-icon.png"
+        alt="Beauty Growth Lab"
+        width={36}
+        height={36}
+        className="shrink-0 transition-transform duration-300 group-hover:scale-105"
+        priority
+      />
       <span className="flex flex-col leading-none">
         <span className="font-display text-[0.95rem] font-semibold tracking-tight text-ink">
           Beauty Growth Lab

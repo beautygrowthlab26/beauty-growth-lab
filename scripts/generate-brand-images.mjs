@@ -8,40 +8,13 @@ const pretendardDir = path.join(root, "node_modules/pretendard/dist/public/stati
 const pretendardBold = await readFile(path.join(pretendardDir, "Pretendard-Bold.otf"));
 const pretendardRegular = await readFile(path.join(pretendardDir, "Pretendard-Regular.otf"));
 
-const SPARKLE_PATH =
-  "M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z";
-
-function sparkleDataUri(color = "white") {
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="${color}"><path d="${SPARKLE_PATH}"/></svg>`;
-  return `data:image/svg+xml;base64,${Buffer.from(svg).toString("base64")}`;
-}
+const logoIconBuf = await readFile(path.join(root, "public/logo-icon.png"));
+const logoIconDataUri = `data:image/png;base64,${logoIconBuf.toString("base64")}`;
 
 const PRIMARY = "#0F5132";
-const GOLD = "#C59D32";
 const IVORY = "#FAF8F3";
 const INK = "#1F2937";
 const MUTED = "#6B7280";
-
-function Logo() {
-  return React.createElement(
-    "div",
-    {
-      style: {
-        width: "100%",
-        height: "100%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        background: `linear-gradient(135deg, ${PRIMARY} 0%, ${GOLD} 100%)`,
-      },
-    },
-    React.createElement("img", {
-      src: sparkleDataUri("white"),
-      width: 260,
-      height: 260,
-    })
-  );
-}
 
 function OgImage() {
   return React.createElement(
@@ -61,21 +34,7 @@ function OgImage() {
     React.createElement(
       "div",
       { style: { display: "flex", alignItems: "center", gap: 14 } },
-      React.createElement(
-        "div",
-        {
-          style: {
-            width: 48,
-            height: 48,
-            borderRadius: 14,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            background: `linear-gradient(135deg, ${PRIMARY} 0%, ${GOLD} 100%)`,
-          },
-        },
-        React.createElement("img", { src: sparkleDataUri("white"), width: 24, height: 24 })
-      ),
+      React.createElement("img", { src: logoIconDataUri, width: 48, height: 48 }),
       React.createElement(
         "span",
         { style: { fontSize: 26, fontWeight: 700, color: INK } },
@@ -167,5 +126,4 @@ async function render(element, width, height, outFile) {
   console.log(`wrote public/${outFile} (${buffer.length} bytes)`);
 }
 
-await render(React.createElement(Logo), 512, 512, "logo.png");
 await render(React.createElement(OgImage), 1200, 630, "og-default.png");
