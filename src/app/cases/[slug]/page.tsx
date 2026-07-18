@@ -35,7 +35,7 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ slu
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <Container className="max-w-3xl">
         <Reveal>
-          <Badge tone="violet">{item.audience}</Badge>
+          <Badge tone="primary">{item.audience}</Badge>
         </Reveal>
         <Reveal delay={0.05}>
           <h1 className="balance font-display mt-5 text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-4xl">
@@ -44,9 +44,9 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ slu
         </Reveal>
         <Reveal delay={0.1}>
           <div className="mt-6 flex flex-wrap gap-2 text-xs text-muted">
-            <span className="glass rounded-full px-3 py-1.5">진행 방식 {item.duration}</span>
+            <span className="card rounded-full px-3 py-1.5">진행 방식 {item.duration}</span>
             {item.toolsUsed.map((tool) => (
-              <span key={tool} className="glass rounded-full px-3 py-1.5">{tool}</span>
+              <span key={tool} className="card rounded-full px-3 py-1.5">{tool}</span>
             ))}
           </div>
         </Reveal>
@@ -63,8 +63,8 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ slu
             <h2 className="text-xl font-semibold text-ink">교육 후 기대할 수 있는 변화</h2>
             <ul className="mt-4 flex flex-col gap-3">
               {item.expectedChange.map((change) => (
-                <li key={change} className="glass flex items-start gap-3 rounded-xl p-5 text-sm leading-relaxed text-ink">
-                  <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-violet" />
+                <li key={change} className="card flex items-start gap-3 rounded-xl p-5 text-sm leading-relaxed text-ink">
+                  <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
                   {change}
                 </li>
               ))}

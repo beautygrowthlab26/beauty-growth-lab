@@ -6,7 +6,7 @@ import type {
 } from "react";
 
 const fieldStyles =
-  "w-full rounded-xl border border-line bg-white/70 px-4 py-3 text-sm text-ink placeholder:text-faint outline-none transition-colors focus:border-violet focus:bg-white";
+  "w-full min-h-12 rounded-xl border border-line bg-white px-4 py-3 text-base text-ink placeholder:text-faint outline-none transition-colors focus:border-primary";
 
 export function Label({
   children,
@@ -20,7 +20,7 @@ export function Label({
   return (
     <label htmlFor={htmlFor} className="text-sm font-medium text-ink">
       {children}
-      {required && <span className="ml-0.5 text-rose">*</span>}
+      {required && <span className="ml-0.5 text-red-600">*</span>}
     </label>
   );
 }
@@ -35,7 +35,7 @@ export function Textarea({ className, ...props }: TextareaHTMLAttributes<HTMLTex
 
 export function Select({ className, children, ...props }: SelectHTMLAttributes<HTMLSelectElement>) {
   return (
-    <select className={cn(fieldStyles, "appearance-none bg-white/70", className)} {...props}>
+    <select className={cn(fieldStyles, "appearance-none bg-white", className)} {...props}>
       {children}
     </select>
   );
@@ -43,5 +43,5 @@ export function Select({ className, children, ...props }: SelectHTMLAttributes<H
 
 export function ErrorText({ children }: { children?: React.ReactNode }) {
   if (!children) return null;
-  return <p className="text-xs font-medium text-rose">{children}</p>;
+  return <p className="text-sm font-medium text-red-600">{children}</p>;
 }

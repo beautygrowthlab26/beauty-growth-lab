@@ -3,17 +3,16 @@ import { cn } from "@/lib/utils";
 import type { ButtonHTMLAttributes } from "react";
 
 const variants = {
-  primary:
-    "bg-ink text-white hover:bg-violet shadow-[0_1px_0_rgba(255,255,255,0.1)_inset] hover:shadow-lg hover:shadow-violet-soft",
-  accent: "bg-violet text-white hover:bg-violet-dark hover:shadow-lg hover:shadow-violet-soft",
-  secondary: "glass text-ink hover:bg-white",
+  primary: "bg-primary text-white hover:bg-primary-dark shadow-sm hover:shadow-md",
+  accent: "bg-gold text-white hover:brightness-95 shadow-sm hover:shadow-md",
+  secondary: "card text-ink hover:bg-primary-soft",
   ghost: "text-ink hover:bg-ink/5",
 };
 
 const sizes = {
-  sm: "h-9 px-4 text-sm",
-  md: "h-11 px-6 text-[0.95rem]",
-  lg: "h-[3.25rem] px-7 text-base",
+  sm: "h-10 px-4 text-sm",
+  md: "h-12 px-6 text-base",
+  lg: "h-14 px-7 text-lg",
 };
 
 type CommonProps = {
@@ -36,7 +35,7 @@ export function Button({
     | ({ href?: undefined } & ButtonHTMLAttributes<HTMLButtonElement>)
   )) {
   const classes = cn(
-    "inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all duration-300 ease-out active:scale-[0.97] whitespace-nowrap",
+    "inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-all duration-200 ease-out active:scale-[0.98] whitespace-nowrap",
     variants[variant],
     sizes[size],
     className

@@ -39,18 +39,18 @@ export default function BgiPage() {
         <div className="mt-14 grid grid-cols-1 gap-10 lg:grid-cols-[1fr_1.3fr]">
           <Reveal>
             <div className="flex flex-col gap-4">
-              <div className="glass rounded-2xl p-6">
+              <div className="card rounded-2xl p-6">
                 <p className="text-sm font-semibold text-ink">리포트에 포함되는 내용</p>
                 <ul className="mt-4 flex flex-col gap-3">
                   {included.map((item) => (
                     <li key={item} className="flex items-start gap-2 text-sm leading-relaxed text-muted">
-                      <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-violet" />
+                      <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
                       {item}
                     </li>
                   ))}
                 </ul>
               </div>
-              <div className="glass rounded-2xl p-6 text-xs leading-relaxed text-faint">
+              <div className="card rounded-2xl p-6 text-xs leading-relaxed text-faint">
                 신청 후 영업일 기준 3~5일 이내에 이메일로 리포트를 보내드립니다.
               </div>
             </div>

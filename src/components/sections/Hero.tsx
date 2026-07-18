@@ -16,8 +16,8 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden pt-20 pb-24 sm:pt-28 sm:pb-32">
       <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="animate-drift absolute -top-32 left-1/2 size-[560px] -translate-x-1/2 rounded-full bg-gradient-to-br from-violet/25 to-rose/15 blur-3xl" />
-        <div className="animate-drift-slow absolute -bottom-40 right-0 size-[440px] rounded-full bg-gradient-to-br from-rose/20 to-violet/10 blur-3xl" />
+        <div className="animate-drift absolute -top-32 left-1/2 size-[560px] -translate-x-1/2 rounded-full bg-gradient-to-br from-primary/25 to-gold/15 blur-3xl" />
+        <div className="animate-drift-slow absolute -bottom-40 right-0 size-[440px] rounded-full bg-gradient-to-br from-gold/20 to-primary/10 blur-3xl" />
       </div>
 
       <Container className="flex flex-col items-center text-center">
@@ -25,9 +25,9 @@ export function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="glass mb-8 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-medium text-ink/80"
+          className="card mb-8 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-medium text-ink/80"
         >
-          <Sparkles className="size-3.5 text-violet" />
+          <Sparkles className="size-3.5 text-primary" />
           SEO를 넘어, AEO·GEO까지 — AI Search Optimization
         </motion.span>
 
@@ -71,7 +71,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.28, ease: [0.16, 1, 0.3, 1] }}
-          className="glass mt-20 grid w-full max-w-3xl grid-cols-1 gap-8 rounded-3xl px-8 py-8 sm:grid-cols-3"
+          className="card mt-20 grid w-full max-w-3xl grid-cols-1 gap-8 rounded-3xl px-8 py-8 sm:grid-cols-3"
         >
           {stats.map((stat) => (
             <div key={stat.label} className="flex flex-col items-center gap-1">

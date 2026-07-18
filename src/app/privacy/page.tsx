@@ -52,7 +52,7 @@ export default function PrivacyPage() {
             </div>
           ))}
 
-          <div className="glass rounded-2xl p-6 text-sm leading-relaxed text-muted">
+          <div className="card rounded-2xl p-6 text-sm leading-relaxed text-muted">
             <p className="font-semibold text-ink">{siteConfig.legalName} (Beauty Growth Lab)</p>
             <p className="mt-2">대표: {siteConfig.ceo}</p>
             <p>사업자등록번호: {siteConfig.businessRegistrationNumber}</p>

@@ -24,12 +24,12 @@ export function BlogPreview() {
             <Reveal key={post.slug} delay={index * 0.08}>
               <Link
                 href={`/blog/${post.slug}`}
-                className="glass group flex h-full flex-col gap-4 rounded-3xl p-8 transition-all duration-300 hover:-translate-y-1"
+                className="card group flex h-full flex-col gap-4 rounded-3xl p-8 transition-all duration-300 hover:-translate-y-1"
               >
                 <Badge tone="neutral">{post.category}</Badge>
                 <h3 className="text-lg font-semibold leading-snug text-ink">{post.title}</h3>
                 <p className="line-clamp-2 text-sm leading-relaxed text-muted">{post.description}</p>
-                <span className="mt-auto flex items-center gap-1 text-sm font-medium text-violet">
+                <span className="mt-auto flex items-center gap-1 text-sm font-medium text-primary">
                   읽어보기
                   <ArrowRight className="size-3.5 transition-transform duration-300 group-hover:translate-x-1" />
                 </span>

@@ -9,8 +9,8 @@ export function ContactTeaser() {
       <Container>
         <Reveal>
           <div className="relative overflow-hidden rounded-[2.5rem] bg-ink px-8 py-16 text-center sm:px-16 sm:py-20">
-            <div className="animate-drift pointer-events-none absolute -right-20 -top-20 size-72 rounded-full bg-gradient-to-br from-violet/40 to-rose/30 blur-3xl" />
-            <div className="animate-drift-slow pointer-events-none absolute -bottom-24 -left-16 size-64 rounded-full bg-gradient-to-br from-rose/30 to-violet/20 blur-3xl" />
+            <div className="animate-drift pointer-events-none absolute -right-20 -top-20 size-72 rounded-full bg-gradient-to-br from-primary/40 to-gold/30 blur-3xl" />
+            <div className="animate-drift-slow pointer-events-none absolute -bottom-24 -left-16 size-64 rounded-full bg-gradient-to-br from-gold/30 to-primary/20 blur-3xl" />
 
             <div className="relative flex flex-col items-center gap-6">
               <h2 className="balance font-display max-w-2xl text-3xl font-semibold leading-tight tracking-tight text-white sm:text-5xl">

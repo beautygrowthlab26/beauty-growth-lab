@@ -24,7 +24,7 @@ export function Accordion({
       {items.map((item, index) => {
         const isOpen = openIndex === index;
         return (
-          <div key={item.question} className="glass overflow-hidden rounded-2xl">
+          <div key={item.question} className="card overflow-hidden rounded-2xl">
             <button
               type="button"
               onClick={() => setOpenIndex(isOpen ? null : index)}
@@ -34,7 +34,7 @@ export function Accordion({
               <h3 className="text-[0.98rem] font-medium text-ink sm:text-base">{item.question}</h3>
               <Plus
                 className={cn(
-                  "size-5 shrink-0 text-violet transition-transform duration-300",
+                  "size-5 shrink-0 text-primary transition-transform duration-300",
                   isOpen && "rotate-45"
                 )}
               />

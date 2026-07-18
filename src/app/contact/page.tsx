@@ -39,14 +39,14 @@ export default function ContactPage() {
           <Reveal>
             <div className="flex flex-col gap-4">
               {contactInfo.map((item) => (
-                <div key={item.label} className="glass flex items-center gap-3 rounded-2xl p-5">
-                  <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-violet-soft text-violet-dark">
+                <div key={item.label} className="card flex items-center gap-3 rounded-2xl p-5">
+                  <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary-soft text-primary-dark">
                     <item.icon className="size-4" />
                   </span>
                   <span className="text-sm text-ink">{item.label}</span>
                 </div>
               ))}
-              <div className="glass rounded-2xl p-5 text-xs leading-relaxed text-faint">
+              <div className="card rounded-2xl p-5 text-xs leading-relaxed text-faint">
                 {siteConfig.legalName} (Beauty Growth Lab) · 대표 {siteConfig.ceo} · 사업자등록번호{" "}
                 {siteConfig.businessRegistrationNumber}
               </div>

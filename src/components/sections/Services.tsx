@@ -20,16 +20,16 @@ export function Services() {
             <Reveal key={service.slug} delay={index * 0.08}>
               <Link
                 href={`/services/${service.slug}`}
-                className="glass group flex h-full flex-col gap-6 rounded-3xl p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_48px_-20px_rgba(91,76,255,0.22)]"
+                className="card group flex h-full flex-col gap-6 rounded-3xl p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_48px_-20px_rgba(91,76,255,0.22)]"
               >
                 <div className="flex items-start justify-between">
                   <span className="text-xs font-semibold tracking-wide text-faint">{service.eyebrow}</span>
-                  <ArrowUpRight className="size-5 text-faint transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-violet" />
+                  <ArrowUpRight className="size-5 text-faint transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" />
                 </div>
 
                 <div>
                   <h3 className="font-display text-2xl font-semibold text-ink">{service.name}</h3>
-                  <p className="mt-1 text-sm font-medium text-violet">{service.tagline}</p>
+                  <p className="mt-1 text-sm font-medium text-primary">{service.tagline}</p>
                 </div>
 
                 <p className="text-sm leading-relaxed text-muted">{service.idealFor}</p>
@@ -37,7 +37,7 @@ export function Services() {
                 <ul className="flex flex-col gap-2.5">
                   {service.includes.slice(0, 4).map((item) => (
                     <li key={item.title} className="flex items-start gap-2 text-sm text-ink/85">
-                      <Check className="mt-0.5 size-4 shrink-0 text-violet" />
+                      <Check className="mt-0.5 size-4 shrink-0 text-primary" />
                       {item.title}
                     </li>
                   ))}

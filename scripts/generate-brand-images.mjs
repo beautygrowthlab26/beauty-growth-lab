@@ -16,9 +16,11 @@ function sparkleDataUri(color = "white") {
   return `data:image/svg+xml;base64,${Buffer.from(svg).toString("base64")}`;
 }
 
-const VIOLET = "#5B4CFF";
-const ROSE = "#FF5A7A";
-const INK = "#0E0E12";
+const PRIMARY = "#0F5132";
+const GOLD = "#C59D32";
+const IVORY = "#FAF8F3";
+const INK = "#1F2937";
+const MUTED = "#6B7280";
 
 function Logo() {
   return React.createElement(
@@ -30,7 +32,7 @@ function Logo() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        background: `linear-gradient(135deg, ${VIOLET} 0%, ${ROSE} 100%)`,
+        background: `linear-gradient(135deg, ${PRIMARY} 0%, ${GOLD} 100%)`,
       },
     },
     React.createElement("img", {
@@ -50,36 +52,11 @@ function OgImage() {
         height: "100%",
         display: "flex",
         flexDirection: "column",
-        background: INK,
+        background: IVORY,
         position: "relative",
         padding: "64px 80px",
       },
     },
-    // glow blobs
-    React.createElement("div", {
-      style: {
-        position: "absolute",
-        top: -180,
-        left: -120,
-        width: 640,
-        height: 640,
-        borderRadius: 9999,
-        background: `radial-gradient(circle, ${VIOLET}55 0%, ${VIOLET}00 70%)`,
-        display: "flex",
-      },
-    }),
-    React.createElement("div", {
-      style: {
-        position: "absolute",
-        bottom: -220,
-        right: -140,
-        width: 620,
-        height: 620,
-        borderRadius: 9999,
-        background: `radial-gradient(circle, ${ROSE}4d 0%, ${ROSE}00 70%)`,
-        display: "flex",
-      },
-    }),
     // top logo lockup
     React.createElement(
       "div",
@@ -94,14 +71,14 @@ function OgImage() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            background: `linear-gradient(135deg, ${VIOLET} 0%, ${ROSE} 100%)`,
+            background: `linear-gradient(135deg, ${PRIMARY} 0%, ${GOLD} 100%)`,
           },
         },
         React.createElement("img", { src: sparkleDataUri("white"), width: 24, height: 24 })
       ),
       React.createElement(
         "span",
-        { style: { fontSize: 26, fontWeight: 700, color: "white" } },
+        { style: { fontSize: 26, fontWeight: 700, color: INK } },
         "Beauty Growth Lab"
       )
     ),
@@ -116,7 +93,7 @@ function OgImage() {
           justifyContent: "center",
           alignItems: "flex-start",
           gap: 24,
-          maxWidth: 920,
+          maxWidth: 940,
         },
       },
       React.createElement(
@@ -126,36 +103,36 @@ function OgImage() {
             display: "flex",
             padding: "8px 20px",
             borderRadius: 9999,
-            background: "#5B4CFF33",
-            color: "#C9C3FF",
+            background: "#DCE7E1",
+            color: PRIMARY,
             fontSize: 22,
             fontWeight: 700,
           },
         },
-        "SEO → AEO → GEO"
+        "40·50대 뷰티 원장님을 위한 실전 교육"
       ),
       React.createElement(
         "span",
         {
           style: {
-            fontSize: 64,
+            fontSize: 60,
             fontWeight: 700,
-            color: "white",
-            lineHeight: 1.25,
+            color: INK,
+            lineHeight: 1.3,
           },
         },
-        "AI가 추천하는 브랜드를 만듭니다"
+        "40·50대 뷰티 원장님도 직접 만들 수 있습니다"
       ),
       React.createElement(
         "span",
         {
           style: {
             fontSize: 28,
-            color: "#A3A3AE",
+            color: MUTED,
             lineHeight: 1.5,
           },
         },
-        "AI Search Optimization Company"
+        "캡컷 · 미리캔버스 · 캔바 · AI로 매장 콘텐츠를 직접 만드는 실전 교육"
       )
     ),
     // bottom
@@ -167,11 +144,11 @@ function OgImage() {
           justifyContent: "space-between",
           alignItems: "center",
           fontSize: 22,
-          color: "#6B6B76",
+          color: MUTED,
         },
       },
       React.createElement("span", null, "beautygrowthlab.co.kr"),
-      React.createElement("span", null, "SEO · AEO · GEO")
+      React.createElement("span", null, "캡컷 · 캔바 · 미리캔버스 · AI 교육")
     )
   );
 }

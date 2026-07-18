@@ -35,9 +35,9 @@ export default function CasesPage() {
             <Reveal key={item.slug} delay={index * 0.08}>
               <Link
                 href={`/cases/${item.slug}`}
-                className="glass group flex h-full flex-col gap-5 rounded-3xl p-8 transition-all duration-300 hover:-translate-y-1"
+                className="card group flex h-full flex-col gap-5 rounded-3xl p-8 transition-all duration-300 hover:-translate-y-1"
               >
-                <Badge tone="violet">{item.audience}</Badge>
+                <Badge tone="primary">{item.audience}</Badge>
                 <h2 className="text-lg font-semibold leading-snug text-ink">{item.title}</h2>
                 <div className="flex flex-wrap gap-2">
                   {item.toolsUsed.map((tool) => (
@@ -45,7 +45,7 @@ export default function CasesPage() {
                   ))}
                 </div>
                 <p className="text-sm leading-relaxed text-muted">{item.outcome}</p>
-                <span className="mt-auto flex items-center gap-1 pt-2 text-sm font-medium text-violet">
+                <span className="mt-auto flex items-center gap-1 pt-2 text-sm font-medium text-primary">
                   자세히 보기
                   <ArrowRight className="size-3.5 transition-transform duration-300 group-hover:translate-x-1" />
                 </span>

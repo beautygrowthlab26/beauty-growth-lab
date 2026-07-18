@@ -49,7 +49,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
 
       <Container className="max-w-4xl">
         <Reveal>
-          <span className="mb-5 inline-flex w-fit items-center rounded-full bg-violet-soft px-4 py-1.5 text-xs font-semibold text-violet-dark">
+          <span className="mb-5 inline-flex w-fit items-center rounded-full bg-primary-soft px-4 py-1.5 text-xs font-semibold text-primary-dark">
             {service.eyebrow}
           </span>
         </Reveal>
@@ -59,7 +59,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           </h1>
         </Reveal>
         <Reveal delay={0.1}>
-          <p className="mt-4 text-lg text-violet">{service.tagline}</p>
+          <p className="mt-4 text-lg text-primary">{service.tagline}</p>
         </Reveal>
         <Reveal delay={0.14}>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted">{service.idealFor}</p>
@@ -82,7 +82,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
         <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
           {service.outcomes.map((outcome, i) => (
             <Reveal key={outcome} delay={i * 0.06}>
-              <div className="glass h-full rounded-2xl p-6 text-sm leading-relaxed text-ink">{outcome}</div>
+              <div className="card h-full rounded-2xl p-6 text-sm leading-relaxed text-ink">{outcome}</div>
             </Reveal>
           ))}
         </div>
@@ -93,9 +93,9 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
         <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
           {service.includes.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.04}>
-              <div className="glass flex h-full flex-col gap-2 rounded-2xl p-6">
+              <div className="card flex h-full flex-col gap-2 rounded-2xl p-6">
                 <div className="flex items-center gap-2 text-sm font-semibold text-ink">
-                  <Check className="size-4 text-violet" /> {item.title}
+                  <Check className="size-4 text-primary" /> {item.title}
                 </div>
                 <p className="text-sm leading-relaxed text-muted">{item.description}</p>
               </div>
@@ -109,7 +109,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
         <div className="mt-8 flex flex-col gap-4">
           {service.process.map((step, i) => (
             <Reveal key={step.title} delay={i * 0.06}>
-              <div className="glass flex items-start gap-4 rounded-2xl p-6">
+              <div className="card flex items-start gap-4 rounded-2xl p-6">
                 <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-ink text-xs font-semibold text-white">
                   {i + 1}
                 </span>
@@ -132,7 +132,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
 
       <Container className="mt-24 max-w-4xl">
         <Reveal>
-          <div className="glass-strong flex flex-col items-center gap-5 rounded-[2rem] px-8 py-14 text-center">
+          <div className="card flex flex-col items-center gap-5 rounded-[2rem] px-8 py-14 text-center">
             <h2 className="balance font-display text-2xl font-semibold text-ink sm:text-3xl">
               {service.name}, 우리 브랜드에도 필요할까요?
             </h2>

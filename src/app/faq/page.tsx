@@ -40,10 +40,10 @@ export default function FaqIndexPage() {
                   <Reveal key={entry.slug} delay={index * 0.04}>
                     <Link
                       href={`/faq/${entry.slug}`}
-                      className="glass group flex items-center justify-between gap-4 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-0.5"
+                      className="card group flex items-center justify-between gap-4 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-0.5"
                     >
                       <span className="text-sm font-medium text-ink">{entry.question}</span>
-                      <ArrowRight className="size-4 shrink-0 text-faint transition-all duration-300 group-hover:translate-x-1 group-hover:text-violet" />
+                      <ArrowRight className="size-4 shrink-0 text-faint transition-all duration-300 group-hover:translate-x-1 group-hover:text-primary" />
                     </Link>
                   </Reveal>
                 ))}

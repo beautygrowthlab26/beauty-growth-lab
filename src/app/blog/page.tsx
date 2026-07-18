@@ -36,14 +36,14 @@ export default function BlogIndexPage() {
             <Reveal key={post.slug} delay={index * 0.06}>
               <Link
                 href={`/blog/${post.slug}`}
-                className="glass group flex h-full flex-col gap-4 rounded-3xl p-8 transition-all duration-300 hover:-translate-y-1"
+                className="card group flex h-full flex-col gap-4 rounded-3xl p-8 transition-all duration-300 hover:-translate-y-1"
               >
                 <Badge tone="neutral">{post.category}</Badge>
                 <h2 className="text-lg font-semibold leading-snug text-ink">{post.title}</h2>
                 <p className="line-clamp-3 text-sm leading-relaxed text-muted">{post.description}</p>
                 <div className="mt-auto flex items-center justify-between pt-2">
                   <time className="text-xs text-faint">{post.date}</time>
-                  <span className="flex items-center gap-1 text-sm font-medium text-violet">
+                  <span className="flex items-center gap-1 text-sm font-medium text-primary">
                     읽어보기
                     <ArrowRight className="size-3.5 transition-transform duration-300 group-hover:translate-x-1" />
                   </span>

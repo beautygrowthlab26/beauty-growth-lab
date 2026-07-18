@@ -49,7 +49,7 @@ export default async function FaqDetailPage({ params }: { params: Promise<{ slug
           </Link>
         </Reveal>
         <Reveal delay={0.05}>
-          <Badge tone="violet" className="mt-6">{entry.clusterLabel}</Badge>
+          <Badge tone="primary" className="mt-6">{entry.clusterLabel}</Badge>
         </Reveal>
         <Reveal delay={0.1}>
           <h1 className="balance font-display mt-5 text-2xl font-semibold leading-tight tracking-tight text-ink sm:text-3xl">
@@ -71,10 +71,10 @@ export default async function FaqDetailPage({ params }: { params: Promise<{ slug
                   <Link
                     key={r.slug}
                     href={`/faq/${r.slug}`}
-                    className="glass group flex items-center justify-between gap-4 rounded-2xl p-5 transition-all duration-300 hover:-translate-y-0.5"
+                    className="card group flex items-center justify-between gap-4 rounded-2xl p-5 transition-all duration-300 hover:-translate-y-0.5"
                   >
                     <span className="text-sm font-medium text-ink">{r.question}</span>
-                    <ArrowRight className="size-4 shrink-0 text-faint transition-all duration-300 group-hover:translate-x-1 group-hover:text-violet" />
+                    <ArrowRight className="size-4 shrink-0 text-faint transition-all duration-300 group-hover:translate-x-1 group-hover:text-primary" />
                   </Link>
                 ))}
               </div>

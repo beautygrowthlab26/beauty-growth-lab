@@ -37,16 +37,16 @@ export function SeoAeoGeo() {
         <div className="mt-16 grid grid-cols-1 gap-6 lg:grid-cols-3">
           {steps.map((step, index) => (
             <Reveal key={step.label} delay={index * 0.08}>
-              <div className="glass relative flex h-full flex-col gap-4 rounded-3xl p-8">
+              <div className="card relative flex h-full flex-col gap-4 rounded-3xl p-8">
                 <div className="flex items-center justify-between">
-                  <span className="flex size-12 items-center justify-center rounded-2xl bg-gradient-to-br from-violet to-rose text-white">
+                  <span className="flex size-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-gold text-white">
                     <step.icon className="size-5" />
                   </span>
                   <span className="font-display text-sm font-semibold tracking-wide text-faint">
                     STEP {index + 1}
                   </span>
                 </div>
-                <p className="font-display text-xl font-semibold text-violet">{step.label}</p>
+                <p className="font-display text-xl font-semibold text-primary">{step.label}</p>
                 <h3 className="text-lg font-semibold text-ink">{step.title}</h3>
                 <p className="text-sm leading-relaxed text-muted">{step.description}</p>
                 {index < steps.length - 1 && (

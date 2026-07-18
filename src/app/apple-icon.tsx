@@ -21,7 +21,7 @@ export default function AppleIcon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "linear-gradient(135deg, #5B4CFF 0%, #FF5A7A 100%)",
+          background: "linear-gradient(135deg, #0F5132 0%, #C59D32 100%)",
         }}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}

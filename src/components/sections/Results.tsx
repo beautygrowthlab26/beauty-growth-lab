@@ -39,8 +39,8 @@ export function Results() {
         <div className="mt-16 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {results.map((item, index) => (
             <Reveal key={item.title} delay={index * 0.06}>
-              <div className="glass flex h-full flex-col gap-4 rounded-3xl p-7">
-                <span className="flex size-11 items-center justify-center rounded-xl bg-violet-soft text-violet-dark">
+              <div className="card flex h-full flex-col gap-4 rounded-3xl p-7">
+                <span className="flex size-11 items-center justify-center rounded-xl bg-primary-soft text-primary-dark">
                   <item.icon className="size-5" />
                 </span>
                 <h3 className="text-base font-semibold text-ink">{item.title}</h3>

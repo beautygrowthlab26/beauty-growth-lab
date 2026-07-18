@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --color-bg: #fafaf9;
+  --color-bg: #faf8f3;
   --color-surface: #ffffff;
-  --color-ink: #0e0e12;
-  --color-muted: #63636d;
-  --color-faint: #9a9aa2;
-  --color-line: rgba(14, 14, 18, 0.08);
-  --color-line-strong: rgba(14, 14, 18, 0.14);
-  --color-violet: #5b4cff;
-  --color-violet-dark: #4638db;
-  --color-violet-soft: #eeecff;
-  --color-rose: #ff5a7a;
-  --color-rose-soft: #ffe9ed;
+  --color-ink: #1f2937;
+  --color-muted: #6b7280;
+  --color-faint: #8a8f98;
+  --color-line: rgba(31, 41, 55, 0.12);
+  --color-line-strong: rgba(31, 41, 55, 0.2);
+  --color-primary: #0f5132;
+  --color-primary-dark: #164a35;
+  --color-primary-soft: #dce7e1;
+  --color-gold: #c59d32;
+  --color-gold-light: #e7d6a4;
 }
 
 @theme inline {
@@ -23,14 +23,18 @@
   --color-faint: var(--color-faint);
   --color-line: var(--color-line);
   --color-line-strong: var(--color-line-strong);
-  --color-violet: var(--color-violet);
-  --color-violet-dark: var(--color-violet-dark);
-  --color-violet-soft: var(--color-violet-soft);
-  --color-rose: var(--color-rose);
-  --color-rose-soft: var(--color-rose-soft);
+  --color-primary: var(--color-primary);
+  --color-primary-dark: var(--color-primary-dark);
+  --color-primary-soft: var(--color-primary-soft);
+  --color-gold: var(--color-gold);
+  --color-gold-light: var(--color-gold-light);
   --font-sans: var(--font-pretendard), var(--font-inter), system-ui, sans-serif;
   --font-display: var(--font-inter), var(--font-pretendard), system-ui, sans-serif;
   --container-content: 1200px;
+  --text-base: 1.0625rem;
+  --text-base--line-height: 1.7;
+  --text-sm: 0.95rem;
+  --text-sm--line-height: 1.6;
 }
 
 html {
@@ -47,61 +51,22 @@ body {
 }
 
 ::selection {
-  background: var(--color-violet);
+  background: var(--color-primary);
   color: white;
 }
 
-.glass {
-  background: rgba(255, 255, 255, 0.66);
-  backdrop-filter: blur(20px) saturate(160%);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-  border: 1px solid rgba(14, 14, 18, 0.07);
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  box-shadow: 0 1px 2px rgba(31, 41, 55, 0.04);
 }
 
-.glass-strong {
-  background: rgba(255, 255, 255, 0.82);
-  backdrop-filter: blur(24px) saturate(160%);
-  -webkit-backdrop-filter: blur(24px) saturate(160%);
-  border: 1px solid rgba(14, 14, 18, 0.08);
-}
-
-.text-gradient {
-  background: linear-gradient(100deg, var(--color-violet) 10%, var(--color-rose) 90%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.text-accent {
+  color: var(--color-gold);
 }
 
 .balance {
   text-wrap: balance;
-}
-
-@keyframes drift {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-  50% {
-    transform: translate3d(3%, -4%, 0) scale(1.06);
-  }
-}
-
-.animate-drift {
-  animation: drift 18s ease-in-out infinite;
-}
-
-@keyframes drift-slow {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-  50% {
-    transform: translate3d(-4%, 3%, 0) scale(1.08);
-  }
-}
-
-.animate-drift-slow {
-  animation: drift-slow 24s ease-in-out infinite;
 }
 
 .no-scrollbar::-webkit-scrollbar {

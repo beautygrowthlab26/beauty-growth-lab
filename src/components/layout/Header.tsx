@@ -37,7 +37,7 @@ export function Header() {
     <header
       className={cn(
         "sticky top-0 z-50 w-full transition-all duration-300",
-        scrolled ? "glass-strong" : "bg-transparent"
+        scrolled ? "card" : "bg-transparent"
       )}
     >
       <div className="mx-auto flex h-[4.5rem] max-w-(--container-content) items-center justify-between px-6 py-3 sm:px-8 lg:px-10">
@@ -60,7 +60,7 @@ export function Header() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 8 }}
                   transition={{ duration: 0.18 }}
-                  className="glass-strong absolute left-1/2 top-full w-80 -translate-x-1/2 rounded-2xl p-2 shadow-xl"
+                  className="card absolute left-1/2 top-full w-80 -translate-x-1/2 rounded-2xl p-2 shadow-xl"
                 >
                   {services.map((service) => (
                     <Link
@@ -74,7 +74,7 @@ export function Header() {
                   ))}
                   <Link
                     href="/services"
-                    className="block rounded-xl px-4 py-3 text-sm font-medium text-violet transition-colors hover:bg-violet-soft"
+                    className="block rounded-xl px-4 py-3 text-sm font-medium text-primary transition-colors hover:bg-primary-soft"
                   >
                     전체 서비스 비교 보기 →
                   </Link>
@@ -118,7 +118,7 @@ export function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
-            className="glass-strong overflow-hidden lg:hidden"
+            className="card overflow-hidden lg:hidden"
           >
             <div className="flex flex-col gap-1 px-6 pb-6 pt-2">
               <p className="px-4 pt-3 text-xs font-semibold uppercase tracking-wide text-faint">서비스</p>

@@ -22,7 +22,7 @@ const components = {
   a: ({ href, ...props }: AnchorHTMLAttributes<HTMLAnchorElement>) => (
     <Link
       href={href ?? "#"}
-      className="font-medium text-violet underline decoration-violet/30 underline-offset-4 hover:decoration-violet"
+      className="font-medium text-primary underline decoration-primary/30 underline-offset-4 hover:decoration-primary"
       {...props}
     />
   ),

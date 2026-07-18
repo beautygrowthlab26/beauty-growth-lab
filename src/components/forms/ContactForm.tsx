@@ -37,8 +37,8 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="glass flex flex-col items-center gap-3 rounded-3xl p-12 text-center">
-        <CheckCircle2 className="size-10 text-violet" />
+      <div className="card flex flex-col items-center gap-3 rounded-3xl p-12 text-center">
+        <CheckCircle2 className="size-10 text-primary" />
         <p className="text-lg font-semibold text-ink">문의가 접수되었습니다</p>
         <p className="text-sm text-muted">빠른 시일 내에 담당 팀이 연락드리겠습니다.</p>
         <Button variant="secondary" onClick={() => setStatus("idle")}>
@@ -49,7 +49,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="glass flex flex-col gap-5 rounded-3xl p-8 sm:p-10">
+    <form onSubmit={handleSubmit(onSubmit)} className="card flex flex-col gap-5 rounded-3xl p-8 sm:p-10">
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div className="flex flex-col gap-2">
           <Label htmlFor="name" required>
@@ -112,7 +112,7 @@ export function ContactForm() {
 
       <div className="flex flex-col gap-2">
         <label className="flex items-start gap-2 text-sm text-muted">
-          <input type="checkbox" className="mt-0.5 size-4 accent-violet" {...register("consent")} />
+          <input type="checkbox" className="mt-0.5 size-4 accent-primary" {...register("consent")} />
           <span>
             <Link href="/privacy" className="font-medium text-ink underline underline-offset-2">
               개인정보 수집 및 이용
@@ -124,7 +124,7 @@ export function ContactForm() {
       </div>
 
       {status === "error" && (
-        <p className="text-sm font-medium text-rose">전송 중 문제가 발생했습니다. 잠시 후 다시 시도해주세요.</p>
+        <p className="text-sm font-medium text-red-600">전송 중 문제가 발생했습니다. 잠시 후 다시 시도해주세요.</p>
       )}
 
       <Button type="submit" variant="accent" size="lg" disabled={isSubmitting} className="mt-2">

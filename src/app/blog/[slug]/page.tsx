@@ -81,10 +81,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   <Link
                     key={r.slug}
                     href={`/blog/${r.slug}`}
-                    className="glass group flex flex-col gap-2 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1"
+                    className="card group flex flex-col gap-2 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1"
                   >
                     <span className="text-sm font-medium text-ink">{r.title}</span>
-                    <span className="flex items-center gap-1 text-xs font-medium text-violet">
+                    <span className="flex items-center gap-1 text-xs font-medium text-primary">
                       읽어보기
                       <ArrowRight className="size-3 transition-transform duration-300 group-hover:translate-x-1" />
                     </span>
