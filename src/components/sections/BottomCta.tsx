@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/Button";
 
 const ctas = [
   { label: "교육 상담 신청", href: "/consult", variant: "accent" as const },
-  { label: "1:1 코칭 문의", href: "/programs/one-on-one-coaching", variant: "secondary" as const },
+  { label: "맞춤 시스템 문의", href: "/programs/ai-content-system", variant: "secondary" as const },
   { label: "강의 및 출강 문의", href: "/lecture", variant: "secondary" as const },
   { label: "콘텐츠 제작 문의", href: "/services", variant: "secondary" as const },
 ];
