@@ -97,9 +97,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
         <Reveal delay={0.28}>
           <div className="mt-16 flex flex-col items-center gap-4 rounded-2xl bg-surface p-10 text-center">
-            <p className="text-base text-muted">우리 브랜드의 AI 검색 노출, 지금 확인해보세요</p>
-            <Button href="/bgi" variant="accent">
-              무료 AI 검색 진단 받기
+            <p className="text-base text-muted">콘텐츠 제작을 직접 하기 어렵다면 상담해 보세요</p>
+            <Button href="/contact" variant="accent">
+              제작 서비스 문의하기
             </Button>
           </div>
         </Reveal>

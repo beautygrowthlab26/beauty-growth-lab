@@ -7,20 +7,26 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { Logo } from "@/components/layout/Logo";
 import { Button } from "@/components/ui/Button";
-import { services } from "@/data/services";
 import { cn } from "@/lib/utils";
 
+const courseLinks = [
+  { label: "전체 프로그램 보기", href: "/programs" },
+  { label: "캡컷 교육", href: "/courses/capcut" },
+  { label: "캔바·미리캔버스 교육", href: "/courses/canva-miricanvas" },
+  { label: "AI SNS 교육", href: "/courses/ai-sns" },
+];
+
 const navLinks = [
-  { label: "성공사례", href: "/cases" },
-  { label: "블로그", href: "/blog" },
-  { label: "FAQ", href: "/faq" },
+  { label: "강의·출강", href: "/lecture" },
+  { label: "콘텐츠 제작", href: "/services" },
+  { label: "대표 소개", href: "/about" },
 ];
 
 export function Header() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
+  const [programsOpen, setProgramsOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -46,38 +52,31 @@ export function Header() {
         <nav className="hidden items-center gap-1 lg:flex">
           <div
             className="relative"
-            onMouseEnter={() => setServicesOpen(true)}
-            onMouseLeave={() => setServicesOpen(false)}
+            onMouseEnter={() => setProgramsOpen(true)}
+            onMouseLeave={() => setProgramsOpen(false)}
           >
-            <button className="flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-ink/80 transition-colors hover:bg-ink/5 hover:text-ink">
-              서비스
+            <button className="flex items-center gap-1 rounded-full px-4 py-2 text-base font-medium text-ink/80 transition-colors hover:bg-ink/5 hover:text-ink">
+              교육 프로그램
               <ChevronDown className="size-3.5" />
             </button>
             <AnimatePresence>
-              {servicesOpen && (
+              {programsOpen && (
                 <motion.div
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 8 }}
                   transition={{ duration: 0.18 }}
-                  className="card absolute left-1/2 top-full w-80 -translate-x-1/2 rounded-2xl p-2 shadow-xl"
+                  className="card absolute left-1/2 top-full w-72 -translate-x-1/2 rounded-2xl p-2 shadow-xl"
                 >
-                  {services.map((service) => (
+                  {courseLinks.map((link) => (
                     <Link
-                      key={service.slug}
-                      href={`/services/${service.slug}`}
-                      className="block rounded-xl px-4 py-3 transition-colors hover:bg-ink/5"
+                      key={link.href}
+                      href={link.href}
+                      className="block rounded-xl px-4 py-3 text-base font-medium text-ink transition-colors hover:bg-ink/5"
                     >
-                      <p className="text-sm font-medium text-ink">{service.name}</p>
-                      <p className="text-xs text-muted">{service.tagline} · {service.duration}</p>
+                      {link.label}
                     </Link>
                   ))}
-                  <Link
-                    href="/services"
-                    className="block rounded-xl px-4 py-3 text-sm font-medium text-primary transition-colors hover:bg-primary-soft"
-                  >
-                    전체 서비스 비교 보기 →
-                  </Link>
                 </motion.div>
               )}
             </AnimatePresence>
@@ -86,7 +85,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-full px-4 py-2 text-sm font-medium text-ink/80 transition-colors hover:bg-ink/5 hover:text-ink"
+              className="rounded-full px-4 py-2 text-base font-medium text-ink/80 transition-colors hover:bg-ink/5 hover:text-ink"
             >
               {link.label}
             </Link>
@@ -94,20 +93,17 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-2 lg:flex">
-          <Button href="/contact" variant="ghost" size="sm">
-            문의하기
-          </Button>
-          <Button href="/bgi" variant="accent" size="sm">
-            무료 AI 검색 진단
+          <Button href="/consult" variant="accent" size="sm">
+            교육 상담
           </Button>
         </div>
 
         <button
-          className="flex size-10 items-center justify-center rounded-full text-ink lg:hidden"
+          className="flex size-11 items-center justify-center rounded-full text-ink lg:hidden"
           onClick={() => setMobileOpen((v) => !v)}
           aria-label="메뉴 열기"
         >
-          {mobileOpen ? <X className="size-5" /> : <Menu className="size-5" />}
+          {mobileOpen ? <X className="size-6" /> : <Menu className="size-6" />}
         </button>
       </div>
 
@@ -121,14 +117,14 @@ export function Header() {
             className="card overflow-hidden lg:hidden"
           >
             <div className="flex flex-col gap-1 px-6 pb-6 pt-2">
-              <p className="px-4 pt-3 text-xs font-semibold uppercase tracking-wide text-faint">서비스</p>
-              {services.map((service) => (
+              <p className="px-4 pt-3 text-sm font-semibold uppercase tracking-wide text-faint">교육 프로그램</p>
+              {courseLinks.map((link) => (
                 <Link
-                  key={service.slug}
-                  href={`/services/${service.slug}`}
-                  className="rounded-xl px-4 py-3 text-sm font-medium text-ink hover:bg-ink/5"
+                  key={link.href}
+                  href={link.href}
+                  className="rounded-xl px-4 py-3 text-base font-medium text-ink hover:bg-ink/5"
                 >
-                  {service.name}
+                  {link.label}
                 </Link>
               ))}
               <div className="my-2 h-px bg-line" />
@@ -136,17 +132,14 @@ export function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="rounded-xl px-4 py-3 text-sm font-medium text-ink hover:bg-ink/5"
+                  className="rounded-xl px-4 py-3 text-base font-medium text-ink hover:bg-ink/5"
                 >
                   {link.label}
                 </Link>
               ))}
               <div className="mt-3 flex flex-col gap-2">
-                <Button href="/contact" variant="secondary" className="w-full">
-                  문의하기
-                </Button>
-                <Button href="/bgi" variant="accent" className="w-full">
-                  무료 AI 검색 진단
+                <Button href="/consult" variant="accent" className="w-full">
+                  교육 상담
                 </Button>
               </div>
             </div>

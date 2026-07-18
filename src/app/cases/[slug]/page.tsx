@@ -79,7 +79,7 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ slu
         <Reveal delay={0.32}>
           <div className="mt-16 flex flex-col items-center gap-4 border-t border-line pt-10 text-center">
             <p className="text-base text-muted">우리 매장에도 맞는 교육인지 궁금하신가요?</p>
-            <Button href="/bgi" variant="accent">
+            <Button href="/consult" variant="accent">
               무료 교육 상담 신청하기
               <ArrowRight className="size-4" />
             </Button>

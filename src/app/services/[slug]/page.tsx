@@ -70,8 +70,8 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
               이 패키지로 문의하기
               <ArrowRight className="size-4" />
             </Button>
-            <Button href="/bgi" variant="secondary">
-              무료 진단 먼저 받기
+            <Button href="/consult" variant="secondary">
+              먼저 교육 상담받기
             </Button>
           </div>
         </Reveal>
@@ -143,8 +143,8 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
               <Button href="/contact" variant="accent">
                 문의하기
               </Button>
-              <Button href="/bgi" variant="secondary">
-                무료 AI 검색 진단
+              <Button href="/consult" variant="secondary">
+                교육 상담 신청
               </Button>
             </div>
           </div>
