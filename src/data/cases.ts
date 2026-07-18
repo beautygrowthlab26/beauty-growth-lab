@@ -1,83 +1,59 @@
-export interface CaseStudy {
+export interface EducationCase {
   slug: string;
-  client: string;
-  industry: string;
-  servicesUsed: string[];
+  title: string;
+  audience: string;
   duration: string;
-  summary: string;
-  challenge: string;
-  approach: string[];
-  results: { label: string; before: string; after: string }[];
-  quote?: { text: string; role: string };
+  toolsUsed: string[];
+  outcome: string;
+  expectedChange: string[];
+  disclaimer: string;
 }
 
-export const cases: CaseStudy[] = [
+export const educationCases: EducationCase[] = [
   {
-    slug: "skincare-d2c-brand",
-    client: "스킨케어 D2C 브랜드 A사",
-    industry: "더모코스메틱 · D2C",
-    servicesUsed: ["AI Search Start", "AI Content System"],
-    duration: "4개월",
-    summary: "성분 관련 질문에서 AI 검색 언급 0회 → 월 42회로 전환한 더모코스메틱 브랜드",
-    challenge:
-      "제품력은 뛰어났지만 '민감성 피부 진정 성분' 등 카테고리 질문에서 AI 검색 답변에 브랜드가 전혀 언급되지 않았습니다. 홈페이지는 있었지만 검색엔진과 AI 모두에게 구조적으로 읽히지 않는 상태였습니다.",
-    approach: [
-      "AI 브랜드 진단으로 경쟁 브랜드 대비 노출 격차 정량화",
-      "성분·효능 중심 FAQ 100여 개를 독립 URL과 스키마로 재구축",
-      "월간 콘텐츠 시스템으로 성분 원료 아티클을 토픽 클러스터로 확장",
+    slug: "ai-era-sns-marketing",
+    title: "AI 시대 뷰티샵 SNS 마케팅 실전",
+    audience: "40~50대 뷰티 원장님",
+    duration: "3시간 특강",
+    toolsUsed: ["ChatGPT", "Canva", "CapCut"],
+    outcome: "인스타 카드뉴스와 릴스 대본 완성",
+    expectedChange: [
+      "ChatGPT로 게시물 문구를 스스로 만들 수 있습니다",
+      "Canva로 카드뉴스 한 장을 처음부터 끝까지 완성합니다",
+      "CapCut으로 자막 있는 짧은 릴스를 저장까지 해봅니다",
     ],
-    results: [
-      { label: "AI 검색 언급 횟수(월)", before: "0회", after: "42회" },
-      { label: "브랜드 키워드 검색 유입", before: "월 320명", after: "월 2,150명" },
-      { label: "FAQ 페이지 자연 유입", before: "0", after: "월 890명" },
-    ],
-    quote: {
-      text: "우리가 직접 설명하지 않아도 AI가 우리 브랜드의 강점을 정확히 요약해서 답변한다는 게 신기했습니다.",
-      role: "브랜드 마케팅 팀장",
-    },
+    disclaimer: "실제 수강생 후기는 준비 중입니다. 위 내용은 교육 과정과 기대할 수 있는 변화를 안내한 것입니다.",
   },
   {
-    slug: "dermatology-clinic",
-    client: "피부과 의원 B",
-    industry: "메디컬 뷰티 · 피부과",
-    servicesUsed: ["AI Search Start", "AI Brand Dominance"],
-    duration: "6개월",
-    summary: "지역 3위였던 피부과가 'OO동 피부과 추천' AI 질문에서 1순위로 언급되기까지",
-    challenge:
-      "동일 상권에 경쟁 의원이 많아 블로그 리뷰만으로는 차별화가 어려웠고, AI 검색에서는 경쟁 의원이 먼저 언급되는 상황이었습니다.",
-    approach: [
-      "Knowledge Graph 구축으로 의료진·시술·후기 정보를 구조화된 데이터로 연결",
-      "Authority 구축으로 권위 있는 의료 정보 채널과의 연결 신호 확보",
-      "경쟁 의원 대비 AI 검색 언급 점유율을 매월 추적하고 콘텐츠 허브 고도화",
+    slug: "capcut-basic-class",
+    title: "캡컷 실전 기초 클래스",
+    audience: "영상 편집을 처음 접하는 원장님",
+    duration: "반일 워크숍",
+    toolsUsed: ["CapCut"],
+    outcome: "고객 후기 릴스 한 편 완성",
+    expectedChange: [
+      "영상 불러오기부터 자르기, 자막까지 순서대로 따라 할 수 있습니다",
+      "완성한 영상을 인스타그램에 직접 업로드해봅니다",
+      "다음 릴스는 혼자서도 시작할 수 있다는 자신감이 생깁니다",
     ],
-    results: [
-      { label: "지역 추천 질문 AI 언급 순위", before: "3위", after: "1위" },
-      { label: "신규 상담 문의(월)", before: "38건", after: "127건" },
-      { label: "AI 검색 브랜드 점유율", before: "12%", after: "58%" },
-    ],
+    disclaimer: "실제 수강생 후기는 준비 중입니다. 위 내용은 교육 과정과 기대할 수 있는 변화를 안내한 것입니다.",
   },
   {
-    slug: "hair-nail-local-chain",
-    client: "헤어·네일 로컬 프랜차이즈 C",
-    industry: "로컬 뷰티 · 프랜차이즈",
-    servicesUsed: ["AI Content System"],
-    duration: "3개월",
-    summary: "매장 10곳의 플레이스·콘텐츠를 하나의 AI 검색 전략으로 통합",
-    challenge:
-      "매장마다 플레이스 관리와 콘텐츠 발행이 제각각이라 브랜드 전체의 AI 검색 신뢰도가 분산되고 있었습니다.",
-    approach: [
-      "전 매장 공통 콘텐츠 전략 캘린더 수립",
-      "매장별 플레이스 최적화 및 릴스 기획 표준화",
-      "월간 BGI 리포트로 매장별 성과를 비교 관리",
+    slug: "miricanvas-promo-class",
+    title: "미리캔버스 홍보물 제작 클래스",
+    audience: "이벤트 포스터·가격표를 직접 만들고 싶은 원장님",
+    duration: "소규모 그룹 교육",
+    toolsUsed: ["미리캔버스"],
+    outcome: "이벤트 포스터와 가격표 시안 완성",
+    expectedChange: [
+      "매장 컬러에 맞춘 포스터 템플릿을 직접 고를 수 있습니다",
+      "가격표와 메뉴판을 계절마다 스스로 업데이트할 수 있습니다",
+      "인쇄용 파일까지 저장하는 방법을 익힙니다",
     ],
-    results: [
-      { label: "플레이스 평균 노출수(월)", before: "1,200회", after: "6,400회" },
-      { label: "예약 전환율", before: "4.1%", after: "9.8%" },
-      { label: "AI 검색 인용 매장 수", before: "1곳", after: "9곳" },
-    ],
+    disclaimer: "실제 수강생 후기는 준비 중입니다. 위 내용은 교육 과정과 기대할 수 있는 변화를 안내한 것입니다.",
   },
 ];
 
-export function getCaseBySlug(slug: string) {
-  return cases.find((item) => item.slug === slug);
+export function getEducationCaseBySlug(slug: string) {
+  return educationCases.find((item) => item.slug === slug);
 }

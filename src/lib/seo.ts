@@ -169,3 +169,36 @@ export function serviceJsonLd(input: {
     url: new URL(input.path, siteConfig.url).toString(),
   };
 }
+
+export function personJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${siteConfig.url}/#founder`,
+    name: siteConfig.ceo,
+    jobTitle: "대표",
+    worksFor: { "@id": `${siteConfig.url}/#organization` },
+    description:
+      "해군 여군 장교, 프랜차이즈 카페 운영, 사진·영상 창업 과정을 거쳐 현재 40~50대 뷰티샵 원장님을 위한 AI·캔바·캡컷 실전 교육을 진행하고 있습니다.",
+    url: new URL("/about", siteConfig.url).toString(),
+  };
+}
+
+export function courseJsonLd(input: {
+  name: string;
+  description: string;
+  path: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    name: input.name,
+    description: input.description,
+    provider: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      sameAs: siteConfig.url,
+    },
+    url: new URL(input.path, siteConfig.url).toString(),
+  };
+}

@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/seo";
 import { services } from "@/data/services";
-import { cases } from "@/data/cases";
+import { educationCases } from "@/data/cases";
 import { getAllBlogPosts } from "@/lib/blog";
 import { getAllFaqEntries } from "@/lib/faq";
 
@@ -25,7 +25,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified: new Date(),
   }));
 
-  const caseRoutes = cases.map((item) => ({
+  const caseRoutes = educationCases.map((item) => ({
     url: new URL(`/cases/${item.slug}`, siteConfig.url).toString(),
     lastModified: new Date(),
   }));
