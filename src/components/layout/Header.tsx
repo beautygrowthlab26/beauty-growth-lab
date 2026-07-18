@@ -93,7 +93,7 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-2 lg:flex">
-          <Button href="/consult" variant="accent" size="sm">
+          <Button href="/consult" variant="accent" size="md">
             교육 상담
           </Button>
         </div>

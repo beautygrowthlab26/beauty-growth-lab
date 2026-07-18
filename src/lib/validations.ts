@@ -12,17 +12,6 @@ export const contactSchema = z.object({
 
 export type ContactInput = z.infer<typeof contactSchema>;
 
-export const bgiSchema = z.object({
-  company: z.string().min(1, "브랜드/회사명을 입력해주세요"),
-  website: z.string().min(1, "웹사이트 또는 플레이스/인스타그램 링크를 입력해주세요"),
-  industry: z.string().min(1, "업종을 입력해주세요"),
-  email: z.string().email("올바른 이메일을 입력해주세요"),
-  phone: z.string().optional(),
-  consent: z.literal(true, "개인정보 수집 및 이용에 동의해주세요"),
-});
-
-export type BgiInput = z.infer<typeof bgiSchema>;
-
 export const consultSchema = z.object({
   name: z.string().min(1, "성함을 입력해주세요"),
   shopName: z.string().min(1, "매장명을 입력해주세요"),
