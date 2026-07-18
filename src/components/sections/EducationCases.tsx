@@ -7,13 +7,14 @@ import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { educationCases } from "@/data/cases";
 
-export function CaseStudies() {
+export function EducationCases() {
   return (
     <section className="py-24 sm:py-32">
       <Container>
         <SectionHeading
           eyebrow="교육 사례"
           title="원장님이 직접 완성하는 순간까지 함께합니다"
+          description="아직 실제 수강 후기는 준비 중입니다. 아래는 교육 과정과 기대할 수 있는 변화를 소개한 예시입니다."
         />
 
         <div className="mt-16 grid grid-cols-1 gap-6 lg:grid-cols-3">
@@ -26,8 +27,8 @@ export function CaseStudies() {
                 <Badge tone="primary">{item.audience}</Badge>
                 <h3 className="text-lg font-semibold leading-snug text-ink">{item.title}</h3>
                 <div className="mt-auto flex flex-col gap-3 border-t border-line pt-5">
-                  <p className="text-sm text-muted">{item.outcome}</p>
-                  <span className="flex items-center gap-1 text-sm font-medium text-primary">
+                  <p className="text-base text-muted">{item.outcome}</p>
+                  <span className="flex items-center gap-1 text-base font-medium text-primary">
                     자세히 보기
                     <ArrowRight className="size-3.5 transition-transform duration-300 group-hover:translate-x-1" />
                   </span>
@@ -39,7 +40,7 @@ export function CaseStudies() {
 
         <div className="mt-10 flex justify-center">
           <Button href="/cases" variant="secondary">
-            모든 성공사례 보기
+            모든 교육 사례 보기
           </Button>
         </div>
       </Container>

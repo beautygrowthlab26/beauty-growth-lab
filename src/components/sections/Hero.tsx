@@ -1,84 +1,91 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { StatCounter } from "@/components/ui/StatCounter";
 
-const stats = [
-  { value: 42, suffix: "회", label: "월 평균 AI 검색 언급 증가" },
-  { value: 58, suffix: "%", label: "카테고리 AI 검색 점유율" },
-  { value: 6, suffix: "개월", label: "브랜드 지배력 구축 기간" },
+const workflow = [
+  { step: "아이디어", tool: "ChatGPT" },
+  { step: "디자인", tool: "Canva · 미리캔버스" },
+  { step: "영상", tool: "CapCut" },
+  { step: "업로드", tool: "Instagram · Naver Place" },
 ];
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-20 pb-24 sm:pt-28 sm:pb-32">
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="animate-drift absolute -top-32 left-1/2 size-[560px] -translate-x-1/2 rounded-full bg-gradient-to-br from-primary/25 to-gold/15 blur-3xl" />
-        <div className="animate-drift-slow absolute -bottom-40 right-0 size-[440px] rounded-full bg-gradient-to-br from-gold/20 to-primary/10 blur-3xl" />
-      </div>
-
+    <section className="pt-20 pb-24 sm:pt-28 sm:pb-32">
       <Container className="flex flex-col items-center text-center">
-        <motion.span
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="card mb-8 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-medium text-ink/80"
-        >
-          <Sparkles className="size-3.5 text-primary" />
-          SEO를 넘어, AEO·GEO까지 — AI Search Optimization
-        </motion.span>
-
         <motion.h1
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
-          className="balance font-display max-w-4xl text-[2.6rem] font-semibold leading-[1.1] tracking-tight text-ink sm:text-6xl lg:text-[4.5rem]"
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="balance font-display max-w-3xl text-[2.4rem] font-semibold leading-[1.2] tracking-tight text-ink sm:text-6xl"
         >
-          우리는 홈페이지가 아니라
+          40·50대 뷰티 원장님도
           <br />
-          <span className="text-gradient">AI가 추천하는 브랜드</span>를 만듭니다
+          직접 만들 수 있습니다
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
-          className="balance mt-7 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl"
+          transition={{ duration: 0.6, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
+          className="balance mt-6 max-w-2xl text-xl font-medium leading-relaxed text-primary"
         >
-          ChatGPT, Perplexity, Gemini가 답할 때 당신의 브랜드를 먼저 말하게 만드는 곳.
-          Beauty Growth Lab은 SEO·AEO·GEO를 함께 설계하는 AI 검색 최적화 전문 회사입니다.
+          캡컷 · 미리캔버스 · 캔바 · AI로
+          <br className="sm:hidden" /> 우리 매장 콘텐츠를 완성하는 실전 교육
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.14, ease: [0.16, 1, 0.3, 1] }}
+          className="balance mt-6 max-w-xl text-lg leading-relaxed text-muted"
+        >
+          릴스 편집부터 이벤트 포스터, 고객 후기 이미지, 플레이스 소식, 블로그 콘텐츠까지.
+          빠른 설명과 어려운 전문용어 대신 원장님이 실제로 사용하는 화면을 보며 천천히 따라 할 수 있도록
+          알려드립니다.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="mt-10 flex flex-col items-center gap-3 sm:flex-row"
         >
-          <Button href="/bgi" variant="accent" size="lg">
-            무료 AI 검색 진단 받기
+          <Button href="/consult" variant="accent" size="lg">
+            교육 상담 신청하기
             <ArrowRight className="size-4" />
           </Button>
-          <Button href="/services" variant="secondary" size="lg">
-            서비스 살펴보기
+          <Button href="/programs" variant="secondary" size="lg">
+            교육 프로그램 보기
           </Button>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.24, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <a href="/consult" className="mt-4 inline-block text-base font-medium text-ink underline underline-offset-4">
+            우리 매장에 맞는 교육 추천받기
+          </a>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.28, ease: [0.16, 1, 0.3, 1] }}
-          className="card mt-20 grid w-full max-w-3xl grid-cols-1 gap-8 rounded-3xl px-8 py-8 sm:grid-cols-3"
+          transition={{ duration: 0.6, delay: 0.32, ease: [0.16, 1, 0.3, 1] }}
+          className="card mt-16 grid w-full max-w-3xl grid-cols-2 gap-4 rounded-3xl p-6 sm:grid-cols-4 sm:p-8"
         >
-          {stats.map((stat) => (
-            <div key={stat.label} className="flex flex-col items-center gap-1">
-              <p className="font-display text-3xl font-semibold text-ink sm:text-4xl">
-                <StatCounter value={stat.value} suffix={stat.suffix} />
-              </p>
-              <p className="text-xs text-muted sm:text-sm">{stat.label}</p>
+          {workflow.map((item, index) => (
+            <div key={item.step} className="relative flex flex-col items-center gap-1.5 px-2">
+              <span className="flex size-9 items-center justify-center rounded-full bg-primary-soft text-sm font-semibold text-primary-dark">
+                {index + 1}
+              </span>
+              <p className="mt-1 text-base font-semibold text-ink">{item.step}</p>
+              <p className="text-sm text-muted">{item.tool}</p>
             </div>
           ))}
         </motion.div>

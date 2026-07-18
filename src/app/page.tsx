@@ -1,19 +1,22 @@
 import { Hero } from "@/components/sections/Hero";
-import { AiSearchEra } from "@/components/sections/AiSearchEra";
-import { SeoAeoGeo } from "@/components/sections/SeoAeoGeo";
-import { Results } from "@/components/sections/Results";
-import { Services } from "@/components/sections/Services";
-import { CaseStudies } from "@/components/sections/CaseStudies";
+import { ProblemEmpathy } from "@/components/sections/ProblemEmpathy";
+import { CoreProgramsTools } from "@/components/sections/CoreProgramsTools";
+import { AiSnsEducation } from "@/components/sections/AiSnsEducation";
+import { TeachingMethod } from "@/components/sections/TeachingMethod";
+import { TargetAudience } from "@/components/sections/TargetAudience";
+import { GalleryPreview } from "@/components/sections/GalleryPreview";
+import { ProgramsPricing } from "@/components/sections/ProgramsPricing";
+import { EducationCases } from "@/components/sections/EducationCases";
+import { FounderIntro } from "@/components/sections/FounderIntro";
+import { ConsultCta } from "@/components/sections/ConsultCta";
 import { FaqPreview } from "@/components/sections/FaqPreview";
-import { BlogPreview } from "@/components/sections/BlogPreview";
-import { BgiTeaser } from "@/components/sections/BgiTeaser";
-import { ContactTeaser } from "@/components/sections/ContactTeaser";
+import { BottomCta } from "@/components/sections/BottomCta";
 import { constructMetadata } from "@/lib/seo";
 
 export const metadata = constructMetadata({
-  title: "Beauty Growth Lab | AI가 추천하는 브랜드를 만듭니다",
+  title: "Beauty Growth Lab | 40·50대 뷰티 원장님을 위한 AI·SNS 실전 교육",
   description:
-    "SEO를 넘어 AEO·GEO까지 설계하는 AI Search Optimization 전문 회사. ChatGPT, Perplexity, Gemini가 먼저 추천하는 브랜드를 만듭니다.",
+    "캡컷·미리캔버스·캔바·AI로 우리 매장 콘텐츠를 직접 만드는 실전 교육. 40·50대 뷰티 원장님의 눈높이에서 하나씩 알려드립니다.",
   path: "/",
 });
 
@@ -21,15 +24,18 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <AiSearchEra />
-      <SeoAeoGeo />
-      <Results />
-      <Services />
-      <CaseStudies />
+      <ProblemEmpathy />
+      <CoreProgramsTools />
+      <AiSnsEducation />
+      <TeachingMethod />
+      <TargetAudience />
+      <GalleryPreview />
+      <ProgramsPricing />
+      <EducationCases />
+      <FounderIntro />
+      <ConsultCta />
       <FaqPreview />
-      <BlogPreview />
-      <BgiTeaser />
-      <ContactTeaser />
+      <BottomCta />
     </>
   );
 }
